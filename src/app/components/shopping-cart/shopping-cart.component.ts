@@ -18,7 +18,7 @@ export class ShoppingCartComponent implements OnInit {
   protected readonly faImage = faImage;
   protected readonly faTrash = faTrash;
 
-  shoppingCart$?: Observable<ShoppingCart>;
+  shoppingCart$?: Observable<ShoppingCart | null>;
 
   constructor(private readonly shoppingCartService: ShoppingCartService,
               private readonly toastSerivce: ToastService) { }
