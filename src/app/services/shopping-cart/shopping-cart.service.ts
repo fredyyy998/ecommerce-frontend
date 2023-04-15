@@ -10,9 +10,6 @@ import { environment } from '../../../environments/environment';
 export class ShoppingCartService {
 
   private baseUrl = environment.baseUrlShoppingCartService;
-
-  shoppingCart$: BehaviorSubject<ShoppingCart | null> = new BehaviorSubject<ShoppingCart | null>(null);
-
   constructor(private readonly request: RequestService) { }
 
   getShoppingCart() {
@@ -21,5 +18,9 @@ export class ShoppingCartService {
 
   addProduct(productId: string, quantity: number): Observable<undefined> {
     return this.request.put<{productId: string, quantity: number }, undefined>(`${this.baseUrl}/api/ShoppingBasket`, { productId, quantity });
+  }
+
+  removeProduct(productId: string) {
+    return this.request.delete(`${this.baseUrl}/api/ShoppingBasket/product/${productId}`);
   }
 }
