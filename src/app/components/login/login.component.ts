@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,14 +17,15 @@ export class LoginComponent implements OnInit {
 
   error?: string;
 
-  constructor(private readonly authService: AuthenticationService) { }
+  constructor(private readonly authService: AuthenticationService,
+              private readonly router: Router) { }
 
   ngOnInit(): void {
   }
 
   onLoginFormSubmit() {
     this.authService.login(this.email, this.password).subscribe({
-      next: () => console.log('success'),
+      next: () => this.router.navigate(['/shop']),
       error: (err) => {
         console.error(err);
         this.error = 'There was an error trying to log you in, please try again'

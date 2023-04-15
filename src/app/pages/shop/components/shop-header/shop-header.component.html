@@ -1,0 +1,21 @@
+<div class="border-b-2 py-5 border-indigo-200 flex justify-between">
+  <p>My ecommerce shop</p>
+
+  <div class="max-w-56 w-1/6 flex justify-between">
+    <button [routerLink]="['/login']" *ngIf="!(customer$ | async)">
+      <fa-icon [icon]="faSignInAlt" class="mr-2"></fa-icon>
+      <span>Login</span>
+    </button>
+
+    <button [routerLink]="['/Account']" *ngIf="customer$ | async">
+      <fa-icon [icon]="faUserCircle" class="mr-2"></fa-icon>
+      <span>Account</span>
+    </button>
+
+    <button>
+      <fa-icon [icon]="faShoppingCart" class="mr-2"></fa-icon>
+      <span>Cart</span>
+    </button>
+  </div>
+
+</div>

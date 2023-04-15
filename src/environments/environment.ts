@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  baseUrlAccountService: 'https://localhost:7259'
 };
 
 /*

@@ -1,7 +1,12 @@
+<div class="w-4/5 m-auto">
 
-<div class="m-5 flex flex-wrap just">
+  <app-shop-header></app-shop-header>
 
-  <app-product-preview *ngFor="let product of products$ | async" [product]="product"></app-product-preview>
+  <div class="my-5 flex flex-wrap just">
 
+    <app-product-preview *ngFor="let product of products$ | async" [product]="product"></app-product-preview>
+
+  </div>
 </div>
+
 
