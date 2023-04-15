@@ -1,0 +1,17 @@
+<form (ngSubmit)="onLoginFormSubmit()">
+  <div>
+    <label for="input_login_email" class="block text-sm font-medium leading-6 text-gray-900">Email</label>
+    <input id="input_login_email" type="email" [(ngModel)]="email" name="email" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+  </div>
+  <div>
+    <label for="input_login_password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+    <input id="input_login_password" type="password" [(ngModel)]="password" name="password" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+  </div>
+  <div class=" flex justify-between mt-5">
+    <a href="register">Register</a>
+    <button type="submit" class="group relative flex justify-center rounded-md bg-indigo-600 px-5 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Login</button>
+  </div>
+  <div>
+    <span class="text-red-600">{{ error }}</span>
+  </div>
+</form>
