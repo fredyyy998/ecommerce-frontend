@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, tap } from 'rxjs';
+import { Observable, } from 'rxjs';
 import { Product } from '../../models/product';
 import { RequestService } from '../request/request.service';
 
@@ -12,7 +12,7 @@ export class ProductService {
   public getProducts(search?: string): Observable<Product[]> {
     let url = 'https://localhost:7291/api/Products';
     if (search) {
-      url += `search=${search}`
+      url += `?search=${search}`
     }
 
     return this.request.get(url);

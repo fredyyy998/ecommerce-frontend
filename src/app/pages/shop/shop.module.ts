@@ -6,6 +6,7 @@ import { OfferingsComponent } from './offerings/offerings.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProductPreviewComponent } from './components/product-preview/product-preview.component';
 import { ShopHeaderComponent } from './components/shop-header/shop-header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { ShopHeaderComponent } from './components/shop-header/shop-header.compon
   imports: [
     CommonModule,
     ShopRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ShopModule { }

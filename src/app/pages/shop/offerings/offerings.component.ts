@@ -10,10 +10,15 @@ import { ProductService } from '../../../services/product/product.service';
 })
 export class OfferingsComponent implements OnInit {
   products$?: Observable<Product[]>;
+  searchKey = '';
+
   constructor(private readonly productService: ProductService) { }
 
   ngOnInit(): void {
     this.products$ = this.productService.getProducts();
   }
 
+  onSearch() {
+    this.products$ = this.productService.getProducts(this.searchKey);
+  }
 }
