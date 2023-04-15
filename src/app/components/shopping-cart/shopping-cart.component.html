@@ -1,0 +1,27 @@
+
+<div *ngFor="let shoppingCartItem of (shoppingCart$ | async)?.items" class="flex w-full p-5 justify-between">
+  <div>
+    <fa-icon [icon]="faImage" size="5x"></fa-icon>
+  </div>
+  <div class="flex flex-col">
+    <div>{{shoppingCartItem.name}}</div>
+    <div class="flex justify-between">
+      <span>Quantity:</span>
+      <span>{{ shoppingCartItem.quantity }}</span>
+    </div>
+    <div class="flex justify-between">
+      <span>Total:</span>
+      <span>{{shoppingCartItem.price | currency: shoppingCartItem.currencyCode }}</span>
+    </div>
+
+  </div>
+</div>
+
+<div class="flex w-full p-5 justify-between">
+  <span>Total:</span>
+  <span>{{ '100' | currency:'EUR' }}</span> <!--todo-->
+</div>
+
+<button class="group relative flex justify-center w-full rounded-md bg-indigo-600 px-5 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+  Go to checkout
+</button>
