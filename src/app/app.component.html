@@ -1,1 +1,20 @@
 <router-outlet></router-outlet>
+
+<div class="absolute bottom-5 left-0 right-0 " *ngFor="let toast of toastService.toasts">
+  <div class="flex items-center w-full max-w-xs p-4 m-auto bg-gray-100 text-gray-900 rounded-lg shadow" role="alert">
+    <div *ngIf="toast.type === 'success'" class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg ">
+      <fa-icon [icon]="faCheck"></fa-icon>
+    </div>
+    <div *ngIf="toast.type === 'error'" class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg">
+      <fa-icon [icon]="faExclamationTriangle"></fa-icon>
+    </div>
+    <div class="ml-3 text-sm font-normal">{{ toast.text }}</div>
+    <div class="flex w-full justify-end">
+      <button class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-gray-500 bg-white rounded-lg ">
+        <fa-icon [icon]="faTimes"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+

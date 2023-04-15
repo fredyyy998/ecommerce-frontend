@@ -16,8 +16,9 @@
   </div>
 
 
-  <button (click)="onAddProductToCart()" class="group relative flex justify-around rounded-lg text-indigo-600 border-2 border-indigo-600 px-5 py-2 text-sm font-semibold hover:bg-indigo-600 hover:text-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+  <button [disabled]="requestExecuting" (click)="onAddProductToCart()" class="group relative flex justify-around rounded-lg text-indigo-600 border-2 border-indigo-600 px-5 py-2 text-sm font-semibold hover:bg-indigo-600 hover:text-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
     <span>Add to Cart</span>
     <fa-icon [icon]="faShoppingCart"></fa-icon>
+    <fa-icon *ngIf="requestExecuting" [icon]="faSpinner" class="animate-spin"></fa-icon>
   </button>
 </div>
