@@ -21,6 +21,9 @@ export class AuthenticationService {
               private readonly jwtService: JwtService) { }
 
   login(email: string, password: string): Observable<boolean> {
+    if (this.jwtService.jwt) {
+      this._isLoggedIn$.next(true);
+    }
     return this.request.post<undefined, { token: string }>(`${this.baseUrl}/api/Authentication/login?email=${email}&password=${password}`).pipe(
       tap(result => this.jwtService.jwt = result.token),
       tap(_ => this._isLoggedIn$.next(true)),
