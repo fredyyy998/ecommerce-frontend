@@ -23,6 +23,11 @@ export class RequestService {
     return this.request.post<TResponseBody>(url, body, { headers });
   }
 
+  public put<TRequestBody, TResponseBody>(url: string, body?: TRequestBody): Observable<TResponseBody> {
+    let headers = this.getHeaders();
+    return this.request.put<TResponseBody>(url, body, { headers });
+  }
+
   private getHeaders() {
     let headers = new HttpHeaders();
     if (this.jwtService.jwt) {
