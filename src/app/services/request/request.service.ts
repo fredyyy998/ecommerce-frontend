@@ -24,7 +24,6 @@ export class RequestService {
   }
 
   private getHeaders() {
-    console.log(true);
     let headers = new HttpHeaders();
     if (this.jwtService.jwt) {
       headers = headers.set('Authorization', `Bearer ${this.jwtService.jwt}`);

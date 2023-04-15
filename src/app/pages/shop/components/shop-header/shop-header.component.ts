@@ -3,6 +3,7 @@ import { faShoppingCart, faSignInAlt, faUserCircle } from '@fortawesome/free-sol
 import { Observable } from 'rxjs';
 import { Customer } from '../../../../models/customer';
 import { CustomerService } from '../../../../services/customer/customer.service';
+import { AuthenticationService } from '../../../../services/authentication/authentication.service';
 
 @Component({
   selector: 'app-shop-header',
@@ -13,13 +14,9 @@ export class ShopHeaderComponent implements OnInit {
   protected faSignInAlt = faSignInAlt;
   protected faShoppingCart = faShoppingCart;
   protected faUserCircle = faUserCircle;
-
-  customer$?: Observable<Customer | null>;
-
-  constructor(private readonly customerService: CustomerService) { }
+  constructor(public readonly authService: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.customer$ = this.customerService.getMyAccount();
   }
 
 
