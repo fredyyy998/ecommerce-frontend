@@ -20,4 +20,8 @@ export class OrderHistoryComponent implements OnInit {
   }
 
   protected readonly faImage = faImage;
+
+  onPayOrderClick(orderId: string) {
+    this.orderService.payOrder(orderId)
+  }
 }

@@ -24,4 +24,8 @@ export class OrderService {
   submitOrder(orderId: string, deliveryAddress: Address) {
     return this.request.put(`${this.baseUrl}/api/orders/${orderId}/state/submit`, deliveryAddress);
   }
+
+  payOrder(orderId: string) {
+    return this.request.put(`${this.baseUrl}/api/orders/${orderId}/state/pay`);
+  }
 }
