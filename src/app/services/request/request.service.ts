@@ -28,6 +28,11 @@ export class RequestService {
     return this.request.put<TResponseBody>(url, body, { headers });
   }
 
+  public patch<TRequestBody, TResponseBody>(url: string, body?: TRequestBody): Observable<TResponseBody> {
+    let headers = this.getHeaders();
+    return this.request.patch<TResponseBody>(url, body, { headers });
+  }
+
   public delete<TResponseBody>(url: string): Observable<TResponseBody> {
     let headers = this.getHeaders();
     return this.request.delete<TResponseBody>(url, { headers });

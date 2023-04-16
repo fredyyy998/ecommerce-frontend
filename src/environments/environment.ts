@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  baseUrlAccountService: 'https://localhost:7259',
-  baseUrlShoppingCartService: 'https://localhost:7197',
+  baseUrlAccountService: 'http://localhost:8001',
+  baseUrlShoppingCartService: 'http://localhost:8082',
+  baseUrlInventoryService: 'http://localhost:8080',
 };
 
 /*

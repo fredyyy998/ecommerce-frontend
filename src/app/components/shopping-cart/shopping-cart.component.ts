@@ -33,4 +33,11 @@ export class ShoppingCartComponent implements OnInit {
       error: (err) => this.toastSerivce.addToast(err.error, 'error', false)
     });
   }
+
+  goToCheckoutClick() {
+    this.shoppingCartService.goToCheckout().subscribe({
+      next: (result) => console.log(result),
+      error: (err) => this.toastSerivce.addToast(err.error, 'error', false)
+    })
+  }
 }

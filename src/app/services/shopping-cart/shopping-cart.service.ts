@@ -37,4 +37,8 @@ export class ShoppingCartService {
       tap((data) => this.shoppingCart$.next(data))
     );
   }
+
+  goToCheckout() {
+    return this.request.patch(`${this.baseUrl}/api/ShoppingBasket`);
+  }
 }
