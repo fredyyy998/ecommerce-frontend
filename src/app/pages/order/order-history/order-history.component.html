@@ -1,0 +1,37 @@
+<div class="flex justify-center">
+  <div *ngFor="let order of orders$ | async; let i = index;" class="w-96 rounded-lg border-2">
+    <div class="bg-gray-300 flex justify-between">
+      <div class="flex flex-col">
+        <span>Ordered at</span>
+        <span>{{ order.orderDate | date }}</span>
+      </div>
+      <div class="flex flex-col">
+        <span>Total</span>
+        <span>{{ order.totalPrice.grossPrice | currency: order.totalPrice.currency }}</span>
+      </div>
+      <div class="flex flex-col">
+        <span>Order #{{i}}</span>
+        <a class="text-blue-600 underline cursor-pointer">View Details</a>
+      </div>
+    </div>
+
+    <div *ngFor="let product of order.products" class="flex w-full p-5">
+      <div>
+        <fa-icon [icon]="faImage" size="5x"></fa-icon>
+      </div>
+      <div class="w-full pl-5">
+        <div>{{product.name}}</div>
+        <div class="flex justify-between">
+          <span>Quantity:</span>
+          <span>{{product.quantity}}</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Total:</span>
+          <span>{{product.totalPrice.grossPrice | currency: product.totalPrice.currencyCode}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
