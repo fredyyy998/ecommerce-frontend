@@ -12,12 +12,24 @@ export class JwtService {
 
   private _jwt?: string;
 
-  public decodedJwt?: {
+  private _decodedJwt?: {
     email: string;
     customerId: string;
     role: string;
     expiring: Date
   };
+
+
+  get decodedJwt(): { email: string; customerId: string; role: string; expiring: Date } | undefined {
+    if (!this._jwt) {
+      this.loadJtwFromLocalStorage();
+    }
+    return this._decodedJwt;
+  }
+
+  set decodedJwt(value: { email: string; customerId: string; role: string; expiring: Date } | undefined) {
+    this._decodedJwt = value;
+  }
 
   get jwt(): string | undefined {
     if (!this._jwt) {
@@ -32,10 +44,10 @@ export class JwtService {
       this.setParsedJwt(value);
       this.saveJwtToLocalStorage();
     } else {
-      this.decodedJwt = undefined;
+      this._decodedJwt = undefined;
       this.localStorage.removeItem(this.localStorageKey);
     }
-
+    console.log(this._decodedJwt);
   }
 
   constructor(private localStorage: LocalStorageService) {
@@ -52,7 +64,7 @@ export class JwtService {
 
   private setParsedJwt(jwt: string) {
     const decoded: any = jwt_decode(jwt);
-    this.decodedJwt = {
+    this._decodedJwt = {
         expiring: new Date(decoded.exp * 1000),
         email: decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'],
         customerId: decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'],
