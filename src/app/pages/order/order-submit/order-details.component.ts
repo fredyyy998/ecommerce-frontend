@@ -9,10 +9,10 @@ import { ToastService } from '../../../services/toast/toast.service';
 
 @Component({
   selector: 'app-order-submit',
-  templateUrl: './order-submit.component.html',
-  styleUrls: ['./order-submit.component.css']
+  templateUrl: './order-details.component.html',
+  styleUrls: ['./order-details.component.css']
 })
-export class OrderSubmitComponent implements OnInit {
+export class OrderDetails implements OnInit {
 
   protected readonly faImage = faImage;
 
@@ -36,10 +36,10 @@ export class OrderSubmitComponent implements OnInit {
     );
   }
 
-  submitOrder(orderId: string) {
-    this.orderService.submitOrder(orderId ,this.deliveryAddress).subscribe({
+  onPayOrderClick(orderId: string) {
+    this.orderService.payOrder(orderId).subscribe({
       next: (result) => {
-        this.toastService.addToast('Submitted Order', 'success');
+        this.toastService.addToast('Payed Order', 'success');
         this.router.navigate(['..', 'history']);
       },
       error: (err) => this.toastService.addToast(err.error, 'error', false)

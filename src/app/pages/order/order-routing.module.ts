@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { OrderHistoryComponent } from './order-history/order-history.component';
-import { OrderSubmitComponent } from './order-submit/order-submit.component';
+import { OrderDetails } from './order-submit/order-details.component';
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: ':orderId',
-    component: OrderSubmitComponent
+    component: OrderDetails
   }
 ];
 
