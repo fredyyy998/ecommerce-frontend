@@ -6,7 +6,7 @@ import { AuthenticationService } from '../services/authentication/authentication
 @Injectable({
   providedIn: 'root'
 })
-export class LoginGuardGuard implements CanActivate {
+export class LoginGuard implements CanActivate {
 
 
   constructor(private readonly authService: AuthenticationService,
@@ -15,9 +15,7 @@ export class LoginGuardGuard implements CanActivate {
   canActivate(): Observable<boolean | UrlTree> {
     return this.authService.isLoggedIn$.pipe(
       map(result => {
-        console.log(result);
         if (result) {
-          console.log(this.router.parseUrl('/shop'));
           return this.router.parseUrl('/shop');
         }
         return true;

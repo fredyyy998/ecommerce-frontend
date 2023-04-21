@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginGuardGuard } from './guards/login-guard.guard';
+import { LoginGuard } from './guards/login.guard';
 import { RoleGuard } from './guards/role.guard';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./pages/authentication/authentication.module').then(m => m.AuthenticationModule),
-    canActivate: [LoginGuardGuard]
+    canActivate: [LoginGuard]
   },
   {
     path: 'shop',
@@ -15,15 +16,18 @@ const routes: Routes = [
   },
   {
     path: 'shopping-cart',
-    loadChildren: () => import('./pages/shopping-cart/shopping-cart.module').then(m => m.ShoppingCartModule)
+    loadChildren: () => import('./pages/shopping-cart/shopping-cart.module').then(m => m.ShoppingCartModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'order',
     loadChildren: () => import('./pages/order/order.module').then(m => m.OrderModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'account',
     loadChildren: () => import('./pages/account/account.module').then(m => m.AccountModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'admin',
