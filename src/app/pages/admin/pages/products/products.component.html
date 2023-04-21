@@ -1,0 +1,28 @@
+<div class="w-96 m-auto">
+  <h2 class="text-4xl font-extrabold">Products</h2>
+
+  <table class="w-full text-sm text-left text-gray-500">
+    <thead class="text-xs text-gray-700">
+      <tr>
+        <th class="px-6 py-3">Product Name</th>
+        <th class="px-6 py-3">Stock</th>
+        <th class="px-6 py-3">Price</th>
+        <th class="px-6 py-3"></th>
+      </tr>
+    </thead>
+
+    <tbody class="bg-white border-b">
+    <tr *ngFor="let product of products$ | async" class="hover:bg-gray-100">
+      <td class="px-6 py-4">{{ product.name }}</td>
+      <td class="px-6 py-4">{{ product.stock }}</td>
+      <td class="px-6 py-4">{{ product.price.grossPrice | currency:product.price.currencyCode }}</td>
+      <td class="px-6 py-4">
+        <fa-icon [routerLink]="[product.id]" class="hover:underline cursor-pointer text-indigo-500" [icon]="faPen"></fa-icon>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+</div>
+

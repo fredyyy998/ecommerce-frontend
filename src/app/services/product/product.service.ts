@@ -3,6 +3,7 @@ import { Observable, } from 'rxjs';
 import { Product } from '../../models/product';
 import { RequestService } from '../request/request.service';
 import { environment } from '../../../environments/environment';
+import { AdminProduct } from '../../models/admin-product';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,9 @@ export class ProductService {
     }
 
     return this.request.get(url);
+  }
+
+  getAdminProducts(): Observable<AdminProduct[]> {
+    return this.request.get(`${this.baseUrl}/api/ProductManagement`);
   }
 }
