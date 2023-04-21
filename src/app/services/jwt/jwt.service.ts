@@ -30,8 +30,12 @@ export class JwtService {
     this._jwt = value;
     if (typeof value === "string") {
       this.setParsedJwt(value);
+      this.saveJwtToLocalStorage();
+    } else {
+      this.decodedJwt = undefined;
+      this.localStorage.removeItem(this.localStorageKey);
     }
-    this.saveJwtToLocalStorage();
+
   }
 
   constructor(private localStorage: LocalStorageService) {
@@ -56,4 +60,7 @@ export class JwtService {
       }
   }
 
+  removeJwt() {
+    this.jwt = undefined;
+  }
 }

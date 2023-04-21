@@ -2,12 +2,12 @@
   <p>My ecommerce shop</p>
 
   <div class="max-w-56 w-1/6 flex justify-between">
-    <button [routerLink]="['/login']" *ngIf="!(authService.isLoggedIn$ | async)">
+    <button [routerLink]="['/auth', 'login']" *ngIf="!(authService.isLoggedIn$ | async)">
       <fa-icon [icon]="faSignInAlt" class="mr-2"></fa-icon>
       <span>Login</span>
     </button>
 
-    <button [routerLink]="['/Account']" *ngIf="authService.isLoggedIn$ | async">
+    <button [routerLink]="['/account']" *ngIf="authService.isLoggedIn$ | async">
       <fa-icon [icon]="faUserCircle" class="mr-2"></fa-icon>
       <span>Account</span>
     </button>

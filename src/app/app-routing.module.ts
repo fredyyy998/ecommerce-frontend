@@ -21,6 +21,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/order/order.module').then(m => m.OrderModule),
   },
   {
+    path: 'account',
+    loadChildren: () => import('./pages/account/account.module').then(m => m.AccountModule),
+  },
+  {
     path: '**',
     redirectTo: 'shop'
   }

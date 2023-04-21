@@ -38,4 +38,8 @@ export class AuthenticationService {
       password
     });
   }
+
+  logout() {
+    this.jwtService.removeJwt();
+  }
 }
