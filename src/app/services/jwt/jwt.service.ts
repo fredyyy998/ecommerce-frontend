@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from '../local-storage/local-storage.service';
 import jwt_decode from "jwt-decode";
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,7 @@ export class JwtService {
 
   constructor(private localStorage: LocalStorageService) {
   }
+
 
   private loadJtwFromLocalStorage() {
     this.jwt = this.localStorage.getItem(this.localStorageKey) || undefined;

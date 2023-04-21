@@ -18,12 +18,13 @@ export class AuthenticationService {
   }
 
   constructor(private readonly request: RequestService,
-              private readonly jwtService: JwtService) { }
-
-  login(email: string, password: string): Observable<boolean> {
+              private readonly jwtService: JwtService) {
     if (this.jwtService.jwt) {
       this._isLoggedIn$.next(true);
     }
+  }
+
+  login(email: string, password: string): Observable<boolean> {
     return this.request.post<undefined, { token: string }>(`${this.baseUrl}/api/Authentication/login?email=${email}&password=${password}`).pipe(
       tap(result => this.jwtService.jwt = result.token),
       tap(_ => this._isLoggedIn$.next(true)),
