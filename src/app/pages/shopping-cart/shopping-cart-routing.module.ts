@@ -5,8 +5,8 @@ import { ShoppingCartPageComponent } from './shopping-cart-page/shopping-cart-pa
 const routes: Routes = [
   {
     path: '',
-    component: ShoppingCartPageComponent
-  }
+    component: ShoppingCartPageComponent,
+  },
 ];
 
 @NgModule({

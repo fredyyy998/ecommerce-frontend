@@ -21,7 +21,7 @@ export class OrderSubmitComponent implements OnInit {
   deliveryAddress: Address = {
     city: '',
     country: '',
-    zip: '',
+    zipCode: '',
     street: ''
   }
 

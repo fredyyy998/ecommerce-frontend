@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { ShoppingCart, ShoppingCartItem } from '../../models/shopping-cart';
@@ -6,6 +6,7 @@ import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faImage, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { ToastService } from '../../services/toast/toast.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -20,8 +21,11 @@ export class ShoppingCartComponent implements OnInit {
 
   shoppingCart$?: Observable<ShoppingCart | null>;
 
+  @Input() displayGoToCheckout = true;
+
   constructor(private readonly shoppingCartService: ShoppingCartService,
-              private readonly toastSerivce: ToastService) { }
+              private readonly toastSerivce: ToastService,
+              private readonly router: Router) { }
 
   ngOnInit(): void {
     this.shoppingCart$ = this.shoppingCartService.getShoppingCart();
@@ -35,9 +39,6 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   goToCheckoutClick() {
-    this.shoppingCartService.goToCheckout().subscribe({
-      next: (result) => console.log(result),
-      error: (err) => this.toastSerivce.addToast(err.error, 'error', false)
-    })
+    this.router.navigate(['/shopping-cart'], { queryParams: { checkout: true }});
   }
 }
