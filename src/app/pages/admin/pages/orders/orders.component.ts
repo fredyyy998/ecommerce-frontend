@@ -12,11 +12,24 @@ import { ToastService } from '../../../../services/toast/toast.service';
 export class OrdersComponent implements OnInit {
 
   orders$?: Observable<Order[]>
+
+  showReadyToShip: boolean = false;
   constructor(private readonly orderService: OrderService,
               private readonly toastService: ToastService) { }
 
   ngOnInit(): void {
-    this.orders$ = this.orderService.getAdminOrders();
+    this.loadOrders();
+  }
+
+  loadOrders() {
+    let state;
+
+    if (this.showReadyToShip) {
+      state = 'payed';
+    }
+
+    this.orders$ = this.orderService.getAdminOrders(state);
+
   }
 
   shipOrder(id: string) {

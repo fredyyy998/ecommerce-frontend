@@ -25,8 +25,12 @@ export class OrderService {
     return this.request.put(`${this.baseUrl}/api/orders/${orderId}/state/pay`);
   }
 
-  getAdminOrders() {
-    return this.request.get<Order[]>(`${this.baseUrl}/api/OrderManagement`);
+  getAdminOrders(state?: string) {
+    let url = `${this.baseUrl}/api/OrderManagement`;
+    if (state) {
+      url += `?Status=${state}`;
+    }
+    return this.request.get<Order[]>(url);
   }
 
   shipOrder(orderId: string) {
