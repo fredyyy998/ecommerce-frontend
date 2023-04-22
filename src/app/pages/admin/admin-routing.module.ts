@@ -5,6 +5,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ProductEditComponent } from './pages/product-edit/product-edit.component';
 import { ProductAddComponent } from './pages/product-add/product-add.component';
 import { OrdersComponent } from './pages/orders/orders.component';
+import { RevenueComponent } from './pages/revenue/revenue.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
         component: OrdersComponent
       }
     ]
+  },
+  {
+    path: 'revenue',
+    component: RevenueComponent
   }
 
 ];
