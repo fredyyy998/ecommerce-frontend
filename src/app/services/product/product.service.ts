@@ -24,4 +24,29 @@ export class ProductService {
   getAdminProducts(): Observable<AdminProduct[]> {
     return this.request.get(`${this.baseUrl}/api/ProductManagement`);
   }
+
+  getAdminProduct(productId: number): Observable<AdminProduct> {
+    return this.request.get(`${this.baseUrl}/api/ProductManagement/${productId}`);
+  }
+
+  addProductStock(productId: string, quantity: number) {
+    return this.request.post(`${this.baseUrl}/api/ProductManagement/${productId}/stock/add`, { quantity });
+  }
+
+  removeProductStock(productId: string, quantity: number) {
+    return this.request.post(`${this.baseUrl}/api/ProductManagement/${productId}/stock/add`, { quantity });
+  }
+
+  deleteProduct(productId: string) {
+    return this.request.delete<undefined>(`${this.baseUrl}/api/ProductManagement/${productId}`);
+  }
+
+  updateProduct(product: AdminProduct) {
+    return this.request.patch(`${this.baseUrl}/api/ProductManagement/${product.id}`, {
+      name: product.name,
+      description: product.description,
+      grossPrice: product.price.grossPrice,
+      productInformation: product.information ?? []
+    });
+  }
 }

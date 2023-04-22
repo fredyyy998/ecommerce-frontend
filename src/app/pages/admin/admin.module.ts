@@ -5,17 +5,22 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminOverviewComponent } from './pages/admin-overview/admin-overview.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ProductEditComponent } from './pages/product-edit/product-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AdminOverviewComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductEditComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class AdminModule { }
