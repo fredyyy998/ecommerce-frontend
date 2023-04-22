@@ -24,4 +24,12 @@ export class OrderService {
   payOrder(orderId: string) {
     return this.request.put(`${this.baseUrl}/api/orders/${orderId}/state/pay`);
   }
+
+  getAdminOrders() {
+    return this.request.get<Order[]>(`${this.baseUrl}/api/OrderManagement`);
+  }
+
+  shipOrder(orderId: string) {
+    return this.request.get<Order[]>(`${this.baseUrl}/api/OrderManagement/{${orderId}/state/ship`);
+  }
 }

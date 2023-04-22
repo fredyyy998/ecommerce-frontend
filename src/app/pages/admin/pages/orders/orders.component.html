@@ -1,0 +1,28 @@
+<div class="w-96 m-auto">
+  <h2 class="text-4xl font-extrabold">Orders</h2>
+
+  <table class="w-full text-sm text-left text-gray-500">
+    <thead class="text-xs text-gray-700">
+    <tr>
+      <th class="px-6 py-3">Order Id</th>
+      <th class="px-6 py-3">Price</th>
+      <th class="px-6 py-3">State</th>
+      <th></th>
+    </tr>
+    </thead>
+
+    <tbody class="bg-white border-b">
+    <tr *ngFor="let order of orders$ | async" class="hover:bg-gray-100">
+      <td class="px-6 py-4">{{ order.id }}</td>
+      <td class="px-6 py-4">{{ order.totalPrice.grossPrice | currency: order.totalPrice.currency }}</td>
+      <td class="px-6 py-4">{{ order.state }}</td>
+      <td *ngIf="order.state === 'payed'">
+        <button (click)="shipOrder(order.id)" class="w-full my-2 rounded-md bg-indigo-600 px-5 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Ship</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+</div>
+

@@ -4,6 +4,7 @@ import { AdminOverviewComponent } from './pages/admin-overview/admin-overview.co
 import { ProductsComponent } from './pages/products/products.component';
 import { ProductEditComponent } from './pages/product-edit/product-edit.component';
 import { ProductAddComponent } from './pages/product-add/product-add.component';
+import { OrdersComponent } from './pages/orders/orders.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,15 @@ const routes: Routes = [
     path: 'products/:productId',
     component: ProductEditComponent,
   },
+  {
+    path: 'orders',
+    children: [
+      {
+        path: '',
+        component: OrdersComponent
+      }
+    ]
+  }
 
 ];
 
