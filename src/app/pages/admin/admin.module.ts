@@ -7,13 +7,15 @@ import { ProductsComponent } from './pages/products/products.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProductEditComponent } from './pages/product-edit/product-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductAddComponent } from './pages/product-add/product-add.component';
 
 
 @NgModule({
   declarations: [
     AdminOverviewComponent,
     ProductsComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    ProductAddComponent
   ],
   imports: [
     CommonModule,

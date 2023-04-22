@@ -50,7 +50,7 @@ export class ProductEditComponent implements OnInit {
     this.productService.deleteProduct(id).subscribe({
       next: () => {
         this.toast.addToast('Successfully deleted product', 'success');
-        this.router.navigate(['..']);
+        this.router.navigate(['/admin', 'products']);
       },
       error: (error) => this.toast.addToast(error.error, 'error'),
     });

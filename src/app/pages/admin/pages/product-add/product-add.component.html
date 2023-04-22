@@ -1,0 +1,30 @@
+<div class="w-96 m-auto">
+
+  <form (submit)="onSubmit()">
+    <h2 class="text-4xl font-extrabold">Add Product</h2>
+
+    <div>
+      <label for="input_name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
+      <input id="input_name" type="text" [(ngModel)]="name" name="name" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+    </div>
+
+    <div>
+      <label for="input_description" class="block text-sm font-medium leading-6 text-gray-900">Description</label>
+      <textarea id="input_description" type="text" [(ngModel)]="description" name="description" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+      </textarea>
+    </div>
+
+    <div>
+      <label for="input_price" class="block text-sm font-medium leading-6 text-gray-900">Gross Price</label>
+      <input id="input_price" type="number" [(ngModel)]="grossPrice" name="gross_price" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+    </div>
+
+
+
+    <div class="flex justify-end">
+      <button type="submit" class="my-2 rounded-md bg-indigo-600 px-5 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

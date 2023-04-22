@@ -49,4 +49,12 @@ export class ProductService {
       productInformation: product.information ?? []
     });
   }
+
+  addProduct(name: string, description: string, grossPrice: number) {
+    return this.request.post<any, AdminProduct>(`${this.baseUrl}/api/ProductManagement/`, {
+      name,
+      description,
+      grossPrice
+    });
+  }
 }

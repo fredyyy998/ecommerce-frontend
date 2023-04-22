@@ -20,6 +20,13 @@
         <fa-icon [routerLink]="[product.id]" class="hover:underline cursor-pointer text-indigo-500" [icon]="faPen"></fa-icon>
       </td>
     </tr>
+    <tr>
+      <td colspan="4">
+        <button [routerLink]="['add']" class="w-full my-2 rounded-md bg-indigo-600 px-5 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          <fa-icon [icon]="faPlus"></fa-icon>
+        </button>
+      </td>
+    </tr>
     </tbody>
   </table>
 

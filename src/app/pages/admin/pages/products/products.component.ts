@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AdminProduct } from '../../../../models/admin-product';
 import { ProductService } from '../../../../services/product/product.service';
-import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-products',
@@ -19,4 +19,5 @@ export class ProductsComponent implements OnInit {
   }
 
   protected readonly faPen = faPen;
+  protected readonly faPlus = faPlus;
 }
