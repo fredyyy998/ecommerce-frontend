@@ -25,10 +25,10 @@
         <span class="flex flex-col justify-center mr-2">{{ product.stock }}</span>
         <input id="input_stock" type="number" [(ngModel)]="stockUpdate" name="stock" class="rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
         <div>
-          <button (click)="onAddStock(product.id)" class="rounded-md bg-indigo-600 px-5 py-1 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          <button type="button" (click)="onAddStock(product.id)" class="rounded-md bg-indigo-600 px-5 py-1 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
             <fa-icon [icon]="faArrowUp"></fa-icon>
           </button>
-          <button (click)="onAddStock(product.id)" class="mt-0.5 rounded-md bg-red-600 px-5 py-1 text-sm font-semibold text-white hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          <button type="button" (click)="onAddStock(product.id)" class="mt-0.5 rounded-md bg-red-600 px-5 py-1 text-sm font-semibold text-white hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
             <fa-icon [icon]="faArrowDown"></fa-icon>
           </button>
         </div>
