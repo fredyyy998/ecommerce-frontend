@@ -1,5 +1,5 @@
 
-<div class="flex justify-center flex-col" *ngIf="(order$ | async) as order">
+<div class="flex justify-center" *ngIf="(order$ | async) as order">
   <div class="w-96">
 
     <h2 class="text-4xl font-extrabold">Order Details</h2>
@@ -10,7 +10,7 @@
 
     <div class="flex justify-between">
       <span>State: {{ order.state }}</span>
-      <button *ngIf="order.state === 'submitted'" class="rounded-md bg-indigo-600 px-5 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+      <button *ngIf="order.state === 'Submitted'" class="rounded-md bg-indigo-600 px-5 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         (click)="onPayOrderClick(order.id)">Pay</button>
     </div>
 
