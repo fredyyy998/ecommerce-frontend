@@ -25,7 +25,7 @@ export class OrdersComponent implements OnInit {
     let state;
 
     if (this.showReadyToShip) {
-      state = 'payed';
+      state = 'Paid';
     }
 
     this.orders$ = this.orderService.getAdminOrders(state);
