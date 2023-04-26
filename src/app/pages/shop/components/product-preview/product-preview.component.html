@@ -13,6 +13,9 @@
         {{ product.description }}
       </p>
     </div>
+    <div class="flex justify-end">
+      {{ product.price.grossPrice | currency:product.price.currencyCode }}
+    </div>
   </div>
 
 

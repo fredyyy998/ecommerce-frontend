@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { RequestService } from '../request/request.service';
 import { environment } from '../../../environments/environment';
 import { Order } from '../../models/order';
-import { Address } from '../../models/customer';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -34,6 +32,6 @@ export class OrderService {
   }
 
   shipOrder(orderId: string) {
-    return this.request.get<Order[]>(`${this.baseUrl}/api/OrderManagement/{${orderId}/state/ship`);
+    return this.request.put(`${this.baseUrl}/api/OrderManagement/${orderId}/state/ship`);
   }
 }
