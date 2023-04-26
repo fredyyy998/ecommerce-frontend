@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../../../services/authentication/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account',
@@ -8,12 +9,14 @@ import { AuthenticationService } from '../../../../services/authentication/authe
 })
 export class AccountComponent implements OnInit {
 
-  constructor(private readonly authService: AuthenticationService) { }
+  constructor(private readonly authService: AuthenticationService,
+              private readonly router: Router) { }
 
   ngOnInit(): void {
   }
 
   onLogout() {
     this.authService.logout();
+    this.router.navigate(['/shop']);
   }
 }
