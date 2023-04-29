@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './error.component.html',
-  styleUrls: ['./error.component.css']
+  styleUrls: ['./error.component.scss']
 })
 export class ErrorComponent implements OnInit {
 

@@ -10,7 +10,7 @@ import { ToastService } from '../../../services/toast/toast.service';
 @Component({
   selector: 'app-order-submit',
   templateUrl: './order-details.component.html',
-  styleUrls: ['./order-details.component.css']
+  styleUrls: ['./order-details.component.scss']
 })
 export class OrderDetails implements OnInit {
 

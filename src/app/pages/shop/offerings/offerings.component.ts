@@ -6,7 +6,7 @@ import { ProductService } from '../../../services/product/product.service';
 @Component({
   selector: 'app-offerings',
   templateUrl: './offerings.component.html',
-  styleUrls: ['./offerings.component.css']
+  styleUrls: ['./offerings.component.scss']
 })
 export class OfferingsComponent implements OnInit {
   products$?: Observable<Product[]>;

@@ -4,7 +4,7 @@ import { Address } from '../../../models/customer';
 @Component({
   selector: 'app-address-input',
   templateUrl: './address-input.component.html',
-  styleUrls: ['./address-input.component.css']
+  styleUrls: ['./address-input.component.scss']
 })
 export class AddressInputComponent {
 

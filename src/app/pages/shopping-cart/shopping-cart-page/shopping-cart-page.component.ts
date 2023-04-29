@@ -9,7 +9,7 @@ import { Checkout } from '../../../models/checkout';
 @Component({
   selector: 'app-shopping-cart-page',
   templateUrl: './shopping-cart-page.component.html',
-  styleUrls: ['./shopping-cart-page.component.css']
+  styleUrls: ['./shopping-cart-page.component.scss']
 })
 export class ShoppingCartPageComponent implements OnInit {
   firstName: string = '';

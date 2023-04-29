@@ -5,7 +5,7 @@ import { RevenueReport } from '../../../../models/revenue-report';
 @Component({
   selector: 'app-revenue',
   templateUrl: './revenue.component.html',
-  styleUrls: ['./revenue.component.css']
+  styleUrls: ['./revenue.component.scss']
 })
 export class RevenueComponent implements OnInit {
 
