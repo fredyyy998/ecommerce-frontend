@@ -8,7 +8,7 @@ import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { ToastService } from '../../../services/toast/toast.service';
 
 @Component({
-  selector: 'app-order-submit',
+  selector: 'app-order-details',
   templateUrl: './order-details.component.html',
   styleUrls: ['./order-details.component.scss']
 })

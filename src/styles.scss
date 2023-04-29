@@ -2,3 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+.button {
+  @apply border-2 border-indigo-900;
+
+  @apply  text-sm font-semibold text-indigo-900;
+
+  @apply my-1.5;
+  @apply px-5 py-2;
+
+  @apply rounded-md;
+
+
+  &:hover {
+    @apply bg-indigo-100;
+  }
+
+  &.primary {
+    @apply border-0;
+    @apply bg-indigo-600 text-indigo-50;
+
+    &:hover {
+      @apply bg-indigo-800;
+    }
+
+    &:focus {
+     @apply outline outline-2 outline-offset-2 outline-indigo-600
+    }
+
+  }
+
+  &.warn{
+    @apply border-0;
+    @apply bg-red-600 text-red-50;
+
+    &:hover {
+      @apply bg-red-800;
+    }
+  }
+}

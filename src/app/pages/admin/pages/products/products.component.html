@@ -17,12 +17,12 @@
       <td class="px-6 py-4">{{ product.stock }}</td>
       <td class="px-6 py-4">{{ product.price.grossPrice | currency:product.price.currencyCode }}</td>
       <td class="px-6 py-4">
-        <fa-icon [routerLink]="[product.id]" class="hover:underline cursor-pointer text-indigo-500" [icon]="faPen"></fa-icon>
+        <fa-icon [routerLink]="[product.id]" class="hover:underline cursor-pointer text-indigo-600 hover:text-indigo-800" [icon]="faPen"></fa-icon>
       </td>
     </tr>
     <tr>
       <td colspan="4">
-        <button [routerLink]="['add']" class="w-full my-2 rounded-md bg-indigo-600 px-5 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+        <button [routerLink]="['add']" class="button primary w-full">
           <fa-icon [icon]="faPlus"></fa-icon>
         </button>
       </td>
