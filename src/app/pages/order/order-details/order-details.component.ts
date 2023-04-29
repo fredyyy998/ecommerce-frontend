@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Order } from '../../../models/order';
-import { filter, Observable, switchMap } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 import { OrderService } from '../../../services/order/order.service';
 import { Address } from '../../../models/customer';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
@@ -38,7 +38,7 @@ export class OrderDetails implements OnInit {
 
   onPayOrderClick(orderId: string) {
     this.orderService.payOrder(orderId).subscribe({
-      next: (result) => {
+      next: _ => {
         this.toastService.addToast('Payed Order', 'success');
         this.router.navigate(['..', 'history']);
       },

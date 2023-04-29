@@ -32,10 +32,8 @@ export class ShoppingCartPageComponent implements OnInit {
   ngOnInit(): void {
     this.isCheckoutMode$ = this.router.queryParams.pipe(
       map(params => {
-        if (params['checkout']) {
-          return true;
-        }
-        return false;
+        return !!params['checkout'];
+
       })
     );
   }

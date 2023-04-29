@@ -3,7 +3,7 @@ import { ProductService } from '../../../../services/product/product.service';
 import { AdminProduct } from '../../../../models/admin-product';
 import { Observable, switchMap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faArrowDown, faArrowUp, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { ToastService } from '../../../../services/toast/toast.service';
 
 @Component({
