@@ -3,15 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { AccountRoutingModule } from './account-routing.module';
 import { AccountComponent } from './pages/account/account.component';
+import { UserHeaderComponent } from '../../components/user-header/user-header.component';
 
 
 @NgModule({
   declarations: [
     AccountComponent
   ],
-  imports: [
-    CommonModule,
-    AccountRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        AccountRoutingModule,
+        UserHeaderComponent
+    ]
 })
 export class AccountModule { }
