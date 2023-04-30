@@ -1,12 +1,18 @@
-<div class="flex justify-center">
-  <div>
-    <h2 class="text-4xl font-extrabold">
-      Admin
-    </h2>
-    <button [routerLink]="['products']" class="button w-full">Products</button>
-    <button [routerLink]="['orders']" class="button w-full">Orders</button>
-    <button [routerLink]="['revenue']" class="button w-full">Revenue</button>
+<div class="flex">
+
+  <div class="w-96">
+    <app-sidebar></app-sidebar>
   </div>
+
+
+  <div class="w-full flex justify-center">
+    <router-outlet></router-outlet>
+  </div>
+
+
 </div>
+
+
+
 
 

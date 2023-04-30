@@ -10,34 +10,35 @@ import { RevenueComponent } from './pages/revenue/revenue.component';
 const routes: Routes = [
   {
     path: '',
-    component: AdminOverviewComponent
-  },
-  {
-    path: 'products',
-    component: ProductsComponent
-  },
-  {
-    path: 'products/add',
-    component: ProductAddComponent
-  },
-  {
-    path: 'products/:productId',
-    component: ProductEditComponent,
-  },
-  {
-    path: 'orders',
+    component: AdminOverviewComponent,
     children: [
       {
-        path: '',
-        component: OrdersComponent
+        path: 'products',
+        component: ProductsComponent
+      },
+      {
+        path: 'products/add',
+        component: ProductAddComponent
+      },
+      {
+        path: 'products/:productId',
+        component: ProductEditComponent,
+      },
+      {
+        path: 'orders',
+        children: [
+          {
+            path: '',
+            component: OrdersComponent
+          }
+        ]
+      },
+      {
+        path: 'revenue',
+        component: RevenueComponent
       }
-    ]
+    ],
   },
-  {
-    path: 'revenue',
-    component: RevenueComponent
-  }
-
 ];
 
 @NgModule({

@@ -1,0 +1,20 @@
+
+<nav class="navigation">
+
+  <button [routerLink]="['/shop']" class="nav-item">
+    <fa-icon [icon]="faShoppingCart"></fa-icon>
+    Shop
+  </button>
+  <button [routerLink]="['/admin', 'products']" routerLinkActive="active" class="nav-item">
+    <fa-icon [icon]="faList"></fa-icon>
+    Products
+  </button>
+  <button [routerLink]="['/admin', 'orders']" routerLinkActive="active" class="nav-item">
+    <fa-icon [icon]="faFileContract"></fa-icon>
+    Orders
+  </button>
+  <button [routerLink]="[ '/admin', 'revenue']" routerLinkActive="active" class="nav-item">
+    <fa-icon [icon]="faMoneyBill"></fa-icon>
+    Revenue
+  </button>
+</nav>

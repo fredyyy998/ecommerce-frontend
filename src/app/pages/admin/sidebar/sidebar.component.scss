@@ -1,0 +1,30 @@
+
+.navigation {
+  height: 100vh;
+  padding: 2em;
+
+  @apply text-gray-400;
+  font-size: 20px;
+
+  border-right: solid 2px;
+  @apply border-indigo-600;
+
+  display: flex;
+  flex-direction: column;
+
+
+
+  .nav-item {
+    margin: 0.5em 0;
+
+    display: flex;
+
+    :first-child {
+      margin-right: 1em;
+    }
+
+    &.active {
+      @apply text-indigo-800;
+    }
+  }
+}

@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductAddComponent } from './pages/product-add/product-add.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { RevenueComponent } from './pages/revenue/revenue.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { RevenueComponent } from './pages/revenue/revenue.component';
     ProductEditComponent,
     ProductAddComponent,
     OrdersComponent,
-    RevenueComponent
+    RevenueComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
