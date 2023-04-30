@@ -1,0 +1,36 @@
+name: Build Angular into docker image
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: install packages
+        run: npm ci
+
+      - name: Build production app
+        run: npm run build
+
+      - name: Login to container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: build and push app image
+        run: |
+          docker build . -t ghcr.io/fredyyy998/ecommerce-frontend/ecommerce-app:latest
+          docker push ghcr.io/fredyyy998/ecommerce-frontend/ecommerce-app:latest
