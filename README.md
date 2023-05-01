@@ -1,6 +1,17 @@
 # EcommerceFrontend
 
+This project is part of the [microservice ecommerce project](https://github.com/fredyyy998/ecommerce) and is the frontend part to the backend project. Since this web app depends on the backend
+it will only run together with that project. Therefore, it is recommended to take a look at that project first, to get that running before starting this project.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
+
+
+## Getting started
+
+1. Install nodejs [further information](https://nodejs.org/en)
+2. (Optional) It is recommended but not necessary to install the angular cli with `npm install -g @angular/cli`
+3. Run `npm install` to install all project dependencies
+4. If the angular cli is installed run `ng serve`, otherwise `npm run start` will also work
 
 ## Development server
 
@@ -14,13 +25,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Deployment
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The project has implemented a GitHub action to automatically build and deploy a production docker image. This image can be found at the GitHub repository at the url `ghcr.io/fredyyy998/ecommerce-frontend/ecommerce-app`.
 
 ## Further help
 
