@@ -33,7 +33,7 @@ export class AuthenticationService {
   }
 
   register(email: string, password: string): Observable<Customer> {
-    return this.request.post<{ email: string, password: string}, Customer>(`https://localhost:7259/api/Authentication/register`, {
+    return this.request.post<{ email: string, password: string}, Customer>(`${this.baseUrl}/api/Authentication/register`, {
       email,
       password
     });
